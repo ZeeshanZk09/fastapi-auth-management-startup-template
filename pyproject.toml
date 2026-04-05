@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "fastapi-template"
+version = "0.1.0"
+description = "A fastapi template project "
+authors = ["Florian Salfenmoser <florian.salfenmoser.dev@outlook.de>"]
+readme = "README.md"
+packages = [{ include = "app" }]
+
+[tool.poetry.scripts]
+app-dev = "app.poetry_scripts:dev"
+app-start = "app.poetry_scripts:start"
+app-test = "app.poetry_scripts:test"
+app-test-v = "app.poetry_scripts:test_verbose"
+app-test-auth = "app.poetry_scripts:test_auth"
+app-init-db = "app.poetry_scripts:init_db"
+app-init-db-local = "app.poetry_scripts:init_db_local"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+pandas = "^3.0.2"
+gunicorn = "^23.0.0"
+nested-lookup = "^0.2.25"
+fastapi = "^0.135.3"
+uvicorn = "^0.43.0"
+dateparser = "^1.4.0"
+schwifty = "^2026.3.0"
+email-validator = "^2.3.0"
+sqlmodel = "^0.0.38"
+pydantic-settings = "^2.13.1"
+psycopg2-binary = "^2.9.11"
+python-jose = "^3.5.0"
+redis = "^7.4.0"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+anyio = "^4.13.0"
+bcrypt = ">=3.2.0,<3.3.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.0.2"
+httpx = "^0.28.1"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore:datetime.datetime.utcfromtimestamp\\(\\) is deprecated.*:DeprecationWarning:dateutil.tz.tz",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

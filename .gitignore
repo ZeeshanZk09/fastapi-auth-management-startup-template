@@ -1,0 +1,32 @@
+.Config.ini
+__pycache__
+.idea
+.pytest_cache
+.vscode
+.project
+.env
+# Local virtual environments
+.venv/
+venv/
+# Local SQLite DB created by dev scripts
+app.db
+# Compiled Python files
+*.py[cod]
+# Type-checker / test / coverage caches
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+# Packaging / build artifacts
+dist/
+build/
+*.egg-info/
+pip-wheel-metadata/
+# OS metadata files
+.DS_Store
+Thumbs.db
+Desktop.ini
+# Runtime logs and local DB files
+*.log
+*.sqlite
+*.db
